@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Чем отличаются HTTP и HTTPS, что дают TLS, сертификаты и шифрование.">
+  <meta name="theme-color" content="#83c9ed">
+  <title>HTTP / HTTPS — защита соединения</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body id="top">
+  <div class="site-shell">
+    <header class="site-header">
+      <nav class="main-nav" aria-label="Основная навигация"><a href="index.html">Главная</a><a class="active" aria-current="page" href="https.html">HTTP / HTTPS</a><a href="ddos.html">DoS / DDoS</a><a href="protection.html">Защита и тест</a></nav>
+    </header>
+
+    <main class="inner-main">
+      <section class="page-hero">
+        <div><p class="eyebrow"><span class="eyebrow-dot"></span> РАЗДЕЛ 01 · ПЕРЕДАЧА ДАННЫХ</p><h1>HTTP<span class="title-period">.</span></h1><p class="hero-lead">Правила обмена данными между браузером и веб-сервером.</p></div>
+      </section>
+
+      <section class="content-section" id="http">
+        <div class="section-heading"><div><p class="eyebrow">01 / БАЗОВЫЙ ПРОТОКОЛ</p><h2>Что такое HTTP?</h2></div></div>
+        <div class="glass-panel text-panel">
+          <p><strong>HTTP (HyperText Transfer Protocol)</strong> — протокол передачи гипертекста. Он определяет, как браузер запрашивает ресурсы, а сервер отвечает на эти запросы. HTTP работает по модели «запрос — ответ».</p>
+          <p>Например, когда ты открываешь страницу, браузер отправляет запрос <code>GET</code>. Сервер обрабатывает его и возвращает ответ с кодом состояния и содержимым страницы.</p>
+          <div class="mini-grid">
+            <div class="mini-info"><b>GET</b><span>Получить ресурс или данные.</span></div>
+            <div class="mini-info"><b>POST</b><span>Передать данные для обработки.</span></div>
+            <div class="mini-info"><b>200 OK</b><span>Запрос успешно обработан.</span></div>
+            <div class="mini-info"><b>404</b><span>Запрошенная страница не найдена.</span></div>
+          </div>
+          <p class="small-muted">Исторически HTTP развивался от простой версии HTTP/0.9 до HTTP/1.1, HTTP/2 и HTTP/3. Современные версии улучшают эффективность и скорость обмена данными.</p>
+        </div>
+      </section>
+
+      <section class="content-section" id="https">
+        <div class="section-heading"><div><p class="eyebrow">02 / ЗАЩИЩЁННОЕ СОЕДИНЕНИЕ</p><h2>Зачем нужен HTTPS?</h2></div></div>
+        <div class="two-column">
+          <article class="glass-panel text-panel"><span class="pill pill-warning">HTTP</span><h3>Открытая передача</h3><p>В обычном HTTP данные передаются без встроенного шифрования. При небезопасной сети их содержимое может быть прочитано или изменено посторонним участником связи.</p><ul class="clean-list"><li>Нет шифрования трафика.</li><li>Нет встроенной проверки целостности на уровне TLS.</li><li>Нет проверки подлинности сервера с помощью TLS-сертификата.</li></ul></article>
+          <article class="glass-panel text-panel"><span class="pill pill-success">HTTPS</span><h3>Защищённая передача</h3><p><strong>HTTPS</strong> — это HTTP, работающий поверх защищённого соединения TLS. TLS помогает защитить данные от чтения и незаметного изменения при передаче.</p><ul class="clean-list"><li>Конфиденциальность — шифрование данных.</li><li>Целостность — обнаружение изменений.</li><li>Аутентификация — проверка сертификата сервера.</li></ul></article>
+        </div>
+        <div class="glass-panel table-panel">
+          <div class="table-title"><h3>HTTP и HTTPS: сравнение</h3><span class="table-caption">Основные различия</span></div>
+          <div class="table-scroll"><table><thead><tr><th>Критерий</th><th>HTTP</th><th>HTTPS</th></tr></thead><tbody>
+            <tr><th>Шифрование</th><td>Нет встроенного шифрования</td><td>Есть защита с помощью TLS</td></tr>
+            <tr><th>Порт по умолчанию</th><td><code>80</code></td><td><code>443</code></td></tr>
+            <tr><th>Сертификат</th><td>Не используется для HTTP-соединения</td><td>Сертификат помогает проверить сервер</td></tr>
+            <tr><th>Защита данных в пути</th><td>Данные могут передаваться открыто</td><td>Защита конфиденциальности и целостности</td></tr>
+            <tr><th>Адрес в браузере</th><td><code>http://</code></td><td><code>https://</code></td></tr>
+          </tbody></table></div>
+          <p class="table-footnote">Порты 80 и 443 — стандартные значения по умолчанию; настройки конкретного сервера могут отличаться.</p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading"><div><p class="eyebrow">03 / TLS HANDSHAKE</p><h2>Как начинается защищённый сеанс?</h2></div><p class="section-aside">Этот процесс называется TLS-рукопожатием.</p></div>
+        <div class="glass-panel handshake-panel">
+          <div class="handshake-party"><span class="party-icon">◉</span><strong>Браузер</strong><small>Клиент</small></div>
+          <div class="handshake-steps">
+            <div class="handshake-step"><span class="step-count">01</span><div><b>ClientHello</b><p>Браузер сообщает поддерживаемые версии TLS и криптографические параметры.</p></div><span class="step-arrow">→</span></div>
+            <div class="handshake-step"><span class="step-count">02</span><div><b>ServerHello и сертификат</b><p>Сервер выбирает параметры соединения и предъявляет сертификат.</p></div><span class="step-arrow">←</span></div>
+            <div class="handshake-step"><span class="step-count">03</span><div><b>Проверка и согласование ключей</b><p>Браузер проверяет сертификат, а стороны формируют общие секретные ключи.</p></div><span class="step-arrow">↔</span></div>
+            <div class="handshake-step"><span class="step-count">04</span><div><b>Защищённый обмен</b><p>После завершения рукопожатия стороны используют согласованные ключи для шифрования данных.</p></div><span class="step-arrow">🔒</span></div>
+          </div>
+          <div class="handshake-party"><span class="party-icon server-icon">▣</span><strong>Сервер</strong><small>Ресурс сайта</small></div>
+        </div>
+        <div class="callout"><strong>Важно про TLS 1.3.</strong> На современном этапе ключи сеанса не передаются браузером как готовый секрет, зашифрованный открытым ключом сервера. Стороны согласуют общий секрет с помощью криптографического обмена ключами. Детали зависят от версии TLS.</div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading"><div><p class="eyebrow">04 / КРИПТОГРАФИЯ</p><h2>Три свойства защиты</h2></div></div>
+        <div class="tech-grid three-up">
+          <article class="glass-panel tech-card"><span class="feature-icon">◈</span><h3>Конфиденциальность</h3><p>Содержимое соединения шифруется, поэтому перехваченные данные нельзя просто прочитать как обычный текст.</p></article>
+          <article class="glass-panel tech-card"><span class="feature-icon">✓</span><h3>Целостность</h3><p>Криптографическая защита позволяет обнаруживать незаметное изменение передаваемых данных.</p></article>
+          <article class="glass-panel tech-card"><span class="feature-icon">◇</span><h3>Подлинность</h3><p>Цифровой сертификат помогает браузеру проверить, с каким доменом установлено соединение.</p></article>
+        </div>
+      </section>
+
+      <section class="source-box glass-panel"><h3>Материалы для изучения</h3><p>Основная информация: исследовательский проект, разделы 1.2–1.3 (стр. 9–13). Уточнение о TLS 1.3: спецификация протокола.</p><a href="https://www.rfc-editor.org/rfc/rfc8446" target="_blank" rel="noopener noreferrer">RFC 8446 — TLS 1.3 ↗</a></section>
+      <div class="page-switch"><a class="button button-soft" href="index.html">← Главная</a><a class="button button-primary" href="ddos.html">Далее: DoS / DDoS →</a></div>
+    </main>
+    <footer class="site-footer"><div class="footer-content"><span>CYBER / BASICS</span><span>Учебный проект по информатике · 2026</span><a href="#top">↑ Наверх</a></div></footer>
+  </div>
+</body>
+</html>

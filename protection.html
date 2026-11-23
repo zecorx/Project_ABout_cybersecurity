@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Как фаерволы, WAF и CDN помогают защищать веб-ресурсы, и интерактивный тест по кибербезопасности.">
+  <meta name="theme-color" content="#83c9ed">
+  <title>Защита и тест — основы кибербезопасности</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body id="top">
+  <div class="site-shell">
+    <header class="site-header"><nav class="main-nav" aria-label="Основная навигация"><a href="index.html">Главная</a><a href="https.html">HTTP / HTTPS</a><a href="ddos.html">DoS / DDoS</a><a class="active" aria-current="page" href="protection.html">Защита и тест</a></nav></header>
+    <main class="inner-main">
+      <section class="page-hero"><div><p class="eyebrow"><span class="eyebrow-dot"></span> РАЗДЕЛ 03 · ОБОРОНА</p><h1>PROTECT<span class="title-period">.</span></h1><p class="hero-lead">Несколько уровней защиты помогают сайту выдерживать угрозы.</p></div></section>
+
+      <section class="content-section"><div class="section-heading"><div><p class="eyebrow">01 / СЕТЕВОЙ ФИЛЬТР</p><h2>Фаервол (Firewall)</h2></div></div>
+        <div class="glass-panel text-panel"><p><strong>Фаервол</strong> — программное или аппаратно-программное средство, которое контролирует сетевой трафик и разрешает или блокирует его по заданным правилам.</p><p>Его можно сравнить с контрольно-пропускным пунктом: каждый запрос проверяется по правилам безопасности. Например, администратор может разрешить необходимый веб-трафик и закрыть неиспользуемые порты.</p><div class="mini-grid"><div class="mini-info"><b>Входящий трафик</b><span>Проверка подключений к серверу.</span></div><div class="mini-info"><b>Правила</b><span>Разрешить, ограничить или заблокировать.</span></div><div class="mini-info"><b>Контекст</b><span>Некоторые фаерволы учитывают состояние соединения.</span></div><div class="mini-info"><b>Ограничение</b><span>Локальный фильтр не спасёт, если канал уже перегружен до сервера.</span></div></div></div>
+      </section>
+
+      <section class="content-section"><div class="section-heading"><div><p class="eyebrow">02 / ЗАЩИТА ВЕБ-ПРИЛОЖЕНИЯ</p><h2>WAF — веб-фаервол</h2></div></div>
+        <div class="glass-panel feature-split"><div class="feature-symbol waf-symbol" aria-hidden="true"><span>WAF</span><i>⌁</i></div><div class="text-panel"><p><strong>WAF (Web Application Firewall)</strong> — специализированный межсетевой экран для веб-приложений. Он анализирует HTTP/HTTPS-запросы и может блокировать подозрительные обращения по правилам безопасности.</p><p>В отличие от обычного сетевого фаервола, который часто ориентируется на адреса, порты и протоколы, WAF проверяет содержимое веб-запросов. Это помогает выявлять некоторые распространённые угрозы, например попытки межсайтового скриптинга (XSS) или SQL-инъекций.</p><p class="small-muted">WAF — дополнительный рубеж защиты, а не замена безопасной разработке и обновлению сайта.</p></div></div>
+      </section>
+
+      <section class="content-section"><div class="section-heading"><div><p class="eyebrow">03 / РАСПРЕДЕЛЁННАЯ ИНФРАСТРУКТУРА</p><h2>CDN — сеть доставки контента</h2></div></div>
+        <div class="glass-panel feature-split"><div class="feature-symbol cdn-symbol" aria-hidden="true"><span>CDN</span><i>◎</i></div><div class="text-panel"><p><strong>CDN (Content Delivery Network)</strong> — сеть серверов, расположенных в разных местах. Она хранит копии части содержимого сайта и помогает отдавать его пользователям через ближайшие или подходящие узлы сети.</p><p>CDN снижает нагрузку на основной сервер, ускоряет загрузку статических материалов и повышает устойчивость инфраструктуры. Некоторые CDN также предоставляют фильтрацию трафика и защиту от DDoS.</p><p class="small-muted">CDN не делает любой сайт автоматически неуязвимым: важны настройки, архитектура и защита исходного сервера.</p></div></div>
+      </section>
+
+      <section class="content-section"><div class="section-heading"><div><p class="eyebrow">04 / МНОГОУРОВНЕВАЯ ЗАЩИТА</p><h2>Как эти средства работают вместе?</h2></div></div>
+        <div class="glass-panel defense-flow"><div class="defense-step"><span>01</span><div><b>CDN / сеть на периметре</b><p>Принимает пользовательский трафик, отдаёт кэшированные материалы и помогает распределять нагрузку.</p></div></div><div class="defense-connector">↓</div><div class="defense-step"><span>02</span><div><b>Фильтрация сетевого трафика</b><p>Сетевые правила отсекают нежелательные соединения и ограничивают доступ к ненужным службам.</p></div></div><div class="defense-connector">↓</div><div class="defense-step"><span>03</span><div><b>WAF</b><p>Проверяет запросы к веб-приложению и блокирует обращения, нарушающие правила.</p></div></div><div class="defense-connector">↓</div><div class="defense-step"><span>04</span><div><b>Веб-сервер и приложение</b><p>Обрабатывают запросы, которые прошли предыдущие уровни защиты.</p></div></div></div>
+        <p class="source-note">Схема условная: конкретный порядок и набор средств защиты зависят от архитектуры веб-ресурса.</p>
+      </section>
+
+      <section class="content-section quiz-section" id="quiz"><div class="section-heading"><div><p class="eyebrow">05 / ПРОВЕРЬ СЕБЯ</p><h2>Мини-тест</h2></div><p class="section-aside">6 вопросов · один правильный ответ в каждом.</p></div>
+        <div class="glass-panel quiz-panel">
+          <div class="quiz-topline"><span id="quiz-progress">Вопрос 1 из 6</span><span class="quiz-progress-track"><span id="quiz-progress-fill"></span></span><span id="quiz-score-label">0 баллов</span></div>
+          <div id="quiz-root" class="quiz-content" aria-live="polite">
+            <h3 id="quiz-question">Какую задачу выполняет HTTPS?</h3>
+            <div id="quiz-options" class="quiz-options"></div>
+            <p id="quiz-feedback" class="quiz-feedback" role="status"></p>
+            <div class="quiz-controls"><button class="button button-primary" id="quiz-check" type="button" disabled>Проверить ответ</button><button class="button button-soft" id="quiz-next" type="button" hidden>Следующий вопрос →</button></div>
+          </div>
+          <div id="quiz-result" class="quiz-result" hidden aria-live="polite"><div class="result-medal">✓</div><p class="eyebrow">ТЕСТ ЗАВЕРШЁН</p><h3 id="quiz-result-title">Отличная работа!</h3><p id="quiz-result-text"></p><button class="button button-primary" id="quiz-restart" type="button">Пройти ещё раз</button></div>
+          <noscript><p class="callout">Для работы интерактивного теста включи JavaScript в браузере.</p></noscript>
+        </div>
+      </section>
+
+      <section class="source-box glass-panel"><h3>Материалы для изучения</h3><p>Основная информация о фаерволах: исследовательский проект, раздел 2.3 (стр. 18–20). Дополнительные определения WAF и CDN — справочные материалы Cisco и Cloudflare.</p><div class="source-links"><a href="https://www.cisco.com/site/us/en/learn/topics/security/what-is-web-application-firewall-waf.html" target="_blank" rel="noopener noreferrer">Cisco — What is a WAF? ↗</a><a href="https://developers.cloudflare.com/reference-architecture/architectures/cdn/" target="_blank" rel="noopener noreferrer">Cloudflare — CDN reference architecture ↗</a></div></section>
+      <div class="page-switch"><a class="button button-soft" href="ddos.html">← DoS / DDoS</a><a class="button button-primary" href="index.html">На главную ↑</a></div>
+    </main>
+    <footer class="site-footer"><div class="footer-content"><span>CYBER / BASICS</span><span>Учебный проект по информатике · 2026</span><a href="#top">↑ Наверх</a></div></footer>
+  </div>
+</body>
+</html>

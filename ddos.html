@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Объяснение DoS и DDoS, ботнетов и уровней L3, L4, L7 модели OSI.">
+  <meta name="theme-color" content="#83c9ed">
+  <title>DoS / DDoS — доступность веб-сайта</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body id="top">
+  <div class="site-shell">
+    <header class="site-header"><nav class="main-nav" aria-label="Основная навигация"><a href="index.html">Главная</a><a href="https.html">HTTP / HTTPS</a><a class="active" aria-current="page" href="ddos.html">DoS / DDoS</a><a href="protection.html">Защита и тест</a></nav></header>
+    <main class="inner-main">
+      <section class="page-hero"><div><p class="eyebrow"><span class="eyebrow-dot"></span> РАЗДЕЛ 02 · ДОСТУПНОСТЬ</p><h1>DoS<span class="title-period">.</span></h1><p class="hero-lead">Когда сервис не может ответить настоящим пользователям.</p></div></section>
+
+      <section class="content-section" id="dos"><div class="section-heading"><div><p class="eyebrow">01 / ОДИН ИСТОЧНИК</p><h2>Что такое DoS?</h2></div></div>
+        <div class="glass-panel text-panel"><p><strong>DoS (Denial of Service — отказ в обслуживании)</strong> — тип атаки, цель которой состоит в том, чтобы сделать сетевой ресурс недоступным или заметно затруднить доступ к нему для обычных пользователей.</p><p>В упрощённом сравнении классическая DoS-атака связана с одним источником чрезмерной или специально сформированной нагрузки. Серверу становится трудно обрабатывать обычные запросы.</p>
+          <div class="analogy"><span class="analogy-icon">☕</span><div><b>Аналогия с кофейней</b><p>Представь кофейню с одним бариста. Один посетитель постоянно занимает кассу бессмысленными вопросами. Остальным приходится ждать, хотя они пришли за обычным заказом.</p></div></div>
+        </div>
+      </section>
+
+      <section class="content-section" id="ddos"><div class="section-heading"><div><p class="eyebrow">02 / МНОЖЕСТВО ИСТОЧНИКОВ</p><h2>А что меняется в DDoS?</h2></div></div>
+        <div class="two-column">
+          <article class="glass-panel text-panel comparison-card"><span class="pill pill-warning">DoS</span><h3>Один источник</h3><p>Нагрузка связана с одним источником. В ряде случаев его проще обнаружить и ограничить.</p><div class="source-dots single-source"><span></span></div><div class="server-target">СЕРВЕР</div></article>
+          <article class="glass-panel text-panel comparison-card"><span class="pill pill-danger">DDoS</span><h3>Много источников</h3><p><strong>DDoS (Distributed Denial of Service)</strong> — распределённый отказ в обслуживании: запросы поступают одновременно от множества устройств.</p><div class="source-dots multi-source"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="server-target">СЕРВЕР</div></article>
+        </div>
+        <div class="glass-panel text-panel"><h3>Что такое ботнет?</h3><p><strong>Ботнет</strong> — сеть устройств, которые без ведома владельцев могут выполнять команды вредоносной программы. Это могут быть заражённые компьютеры, маршрутизаторы, камеры и другие подключённые к интернету устройства.</p><p>При распределённой атаке большое количество таких устройств становится источниками нежелательного трафика. Из-за распределения запросов защитникам сложнее отличить вредоносную нагрузку от потока обычных пользователей.</p><div class="callout"><strong>Важно:</strong> схема показывает только общую идею распределённости. Здесь нет инструкций по созданию ботнета или проведению атаки.</div></div>
+
+        <figure class="glass-panel meme-panel meme-panel-ddos meme-panel-image-only">
+          <img class="meme-image" src="assets/ddos-meme.jpg" alt="Мем с человеком и экраном с надписью SLS на фоне цифрового кода">
+        </figure>
+      </section>
+
+      <section class="content-section"><div class="section-heading"><div><p class="eyebrow">03 / МОДЕЛЬ OSI</p><h2>На каких уровнях бывают перегрузки?</h2></div><p class="section-aside">Уровень OSI помогает описать, какую часть сетевого взаимодействия затрагивает проблема.</p></div>
+        <div class="glass-panel table-panel"><div class="table-scroll"><table><thead><tr><th>Уровень</th><th>Название</th><th>Что означает в контексте DoS/DDoS</th><th>Пример нагрузки</th></tr></thead><tbody>
+          <tr><th><span class="layer-chip">L3</span></th><td>Сетевой</td><td>Связан с доставкой пакетов между сетями и IP-адресацией.</td><td>Чрезмерный поток сетевых пакетов может занять пропускную способность канала.</td></tr>
+          <tr><th><span class="layer-chip">L4</span></th><td>Транспортный</td><td>Отвечает за передачу данных между узлами, в том числе с использованием TCP и UDP.</td><td>Большое количество сетевых соединений может истощать доступные ресурсы.</td></tr>
+          <tr><th><span class="layer-chip">L7</span></th><td>Прикладной</td><td>Уровень, на котором работают приложения и протоколы вроде HTTP.</td><td>Поток обращений к веб-приложению может перегружать обработку запросов.</td></tr>
+        </tbody></table></div><p class="table-footnote">Это учебное упрощение: реальные атаки могут затрагивать несколько уровней одновременно.</p></div>
+      </section>
+
+      <section class="content-section"><div class="section-heading"><div><p class="eyebrow">04 / ПОСЛЕДСТВИЯ</p><h2>Почему это опасно?</h2></div></div>
+        <div class="impact-grid">
+          <article class="glass-panel impact-card"><span>01</span><h3>Финансовые потери</h3><p>Недоступный магазин или сервис теряет заказы и клиентов.</p></article>
+          <article class="glass-panel impact-card"><span>02</span><h3>Репутационный ущерб</h3><p>Пользователи теряют доверие к ресурсу, который часто не работает.</p></article>
+          <article class="glass-panel impact-card"><span>03</span><h3>Сбои в работе</h3><p>Организация тратит время на восстановление нормальной доступности.</p></article>
+          <article class="glass-panel impact-card"><span>04</span><h3>Отвлечение команды</h3><p>Во время перегрузки специалистам важно не пропустить другие инциденты.</p></article>
+        </div>
+      </section>
+
+      <section class="source-box glass-panel"><h3>Материалы для изучения</h3><p>Основная информация: исследовательский проект, раздел 2.1 (стр. 15–16). Для общего описания уровней OSI: справочный материал AWS.</p><a href="https://aws.amazon.com/what-is/osi-model/" target="_blank" rel="noopener noreferrer">AWS — What Is the OSI Model? ↗</a></section>
+      <div class="page-switch"><a class="button button-soft" href="https.html">← HTTP / HTTPS</a><a class="button button-primary" href="protection.html">Далее: защита и тест →</a></div>
+    </main>
+    <footer class="site-footer"><div class="footer-content"><span>CYBER / BASICS</span><span>Учебный проект по информатике · 2026</span><a href="#top">↑ Наверх</a></div></footer>
+  </div>
+</body>
+</html>
