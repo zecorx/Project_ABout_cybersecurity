@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Образовательный проект об основах кибербезопасности: устройство сайтов, HTTP, HTTPS и защита от DoS/DDoS.">
+  <meta name="theme-color" content="#83c9ed">
+  <title>ABOUT — основы кибербезопасности</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body id="top">
+  <div class="site-shell">
+    <header class="site-header">
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a class="active" aria-current="page" href="index.html">Главная</a>
+        <a href="https.html">HTTP / HTTPS</a>
+        <a href="ddos.html">DoS / DDoS</a>
+        <a href="protection.html">Защита и тест</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="home-hero">
+        <div class="hero-copy">
+          <h1 class="about-title">ABOUT<span class="title-period">.</span></h1>
+          <p class="hero-lead">Как работает безопасный интернет — и что помогает сайтам оставаться доступными.</p>
+          <a class="button button-primary" href="#topics">Начать изучение <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-orbit" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="orbit-core"><span>SAFE</span><strong>WEB</strong><small>CONNECTED</small></div>
+          <span class="orbit-tag tag-top">TLS</span><span class="orbit-tag tag-right">L7</span><span class="orbit-tag tag-bottom">DNS</span>
+        </div>
+      </section>
+
+      <section class="section-block" id="topics">
+        <div class="section-heading">
+          <h2>Разделы сайта</h2>
+        </div>
+        <div class="topic-grid">
+          <a class="topic-card topic-sticker" href="#architecture">
+            <span class="card-number">01 / FRONTEND</span>
+            <span class="illustration sticker-art" aria-hidden="true">
+              <svg viewBox="0 0 180 145" role="img">
+                <path class="pin-shadow" d="M89 16 L100 34"/><path class="pin-line" d="M88 12 L103 35"/>
+                <circle class="pin-head" cx="86" cy="12" r="9"/>
+                <path class="sticker-paper" d="M31 34 Q33 24 47 27 L143 30 Q151 31 150 45 L147 116 Q145 126 133 124 L34 120 Q23 117 26 105 Z"/>
+                <path class="sticker-fold" d="M128 111 L148 116 L134 127 Z"/>
+                <text x="88" y="77" text-anchor="middle" class="svg-word">HTML</text>
+                <text x="88" y="101" text-anchor="middle" class="svg-subword">+ CSS</text>
+              </svg>
+            </span>
+            <strong>HTML / CSS</strong><span class="topic-description">Из чего состоит веб-сайт</span><span class="card-arrow">↗</span>
+          </a>
+          <a class="topic-card topic-http" href="https.html#http">
+            <span class="card-number">02 / REQUEST</span>
+            <span class="illustration http-art" aria-hidden="true">
+              <svg viewBox="0 0 180 145" role="img">
+                <path class="frame-back" d="M37 25 L145 21 L151 112 L42 119 Z"/>
+                <rect class="frame-front" x="31" y="24" width="112" height="94" rx="9"/>
+                <path class="frame-line" d="M43 41 H131"/><circle cx="47" cy="33" r="2.5" class="frame-dot"/><circle cx="57" cy="33" r="2.5" class="frame-dot"/>
+                <text x="87" y="86" text-anchor="middle" class="svg-large">HTTP</text>
+              </svg>
+            </span>
+            <strong>HTTP</strong><span class="topic-description">Запросы и ответы сервера</span><span class="card-arrow">↗</span>
+          </a>
+          <a class="topic-card topic-https" href="https.html#https">
+            <span class="card-number">03 / ENCRYPTION</span>
+            <span class="illustration shield-art" aria-hidden="true">
+              <svg viewBox="0 0 180 145" role="img">
+                <path class="shield-shadow" d="M90 17 L146 34 L140 91 Q132 119 90 135 Q48 119 40 91 L34 34 Z"/>
+                <path class="shield-shape" d="M90 13 L143 30 L137 87 Q129 114 90 129 Q51 114 43 87 L37 30 Z"/>
+                <path class="shield-glint" d="M51 38 L90 25 L127 38"/>
+                <text x="90" y="77" text-anchor="middle" class="svg-large">HTTPS</text>
+                <path class="shield-check" d="M72 91 L85 103 L109 80"/>
+              </svg>
+            </span>
+            <strong>HTTPS</strong><span class="topic-description">Шифрование и TLS</span><span class="card-arrow">↗</span>
+          </a>
+          <a class="topic-card topic-dos" href="ddos.html#dos">
+            <span class="card-number">04 / AVAILABILITY</span>
+            <span class="illustration skull-art" aria-hidden="true">
+              <svg viewBox="0 0 180 145" role="img">
+                <path class="skull-shape" d="M90 17 C48 17 28 47 35 82 Q39 102 57 111 L61 127 L119 127 L123 111 Q141 101 145 81 C152 47 132 17 90 17 Z"/>
+                <text x="90" y="82" text-anchor="middle" class="svg-tiny">DoS</text>
+                <path class="skull-nose" d="M90 87 L82 103 L98 103 Z"/>
+                <path class="skull-teeth" d="M65 112 V126 M78 113 V127 M91 113 V127 M104 113 V127 M117 112 V126"/>
+              </svg>
+            </span>
+            <strong>DoS</strong><span class="topic-description">Один источник перегрузки</span><span class="card-arrow">↗</span>
+          </a>
+          <a class="topic-card topic-ddos" href="ddos.html#ddos">
+            <span class="card-number">05 / BOTNET</span>
+            <span class="illustration robot-art" aria-hidden="true">
+              <svg viewBox="0 0 180 145" role="img">
+                <path class="antenna" d="M90 23 V12"/><circle class="antenna-ball" cx="90" cy="10" r="7"/>
+                <rect class="robot-ear" x="22" y="54" width="13" height="47" rx="6"/><rect class="robot-ear" x="145" y="54" width="13" height="47" rx="6"/>
+                <rect class="robot-body" x="33" y="31" width="114" height="91" rx="17"/>
+                <rect class="robot-screen" x="44" y="43" width="92" height="52" rx="8"/>
+                <text x="90" y="76" text-anchor="middle" class="svg-word">DDoS</text>
+                <path class="robot-mouth" d="M62 106 H118 M74 101 V112 M90 101 V112 M106 101 V112"/>
+              </svg>
+            </span>
+            <strong>DDoS</strong><span class="topic-description">Множество источников</span><span class="card-arrow">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section-block architecture-section" id="architecture">
+        <div class="section-heading">
+          <div><p class="eyebrow">СНАЧАЛА — ОСНОВА</p><h2>Как устроен сайт?</h2></div>
+          <p class="section-aside">Веб-сайт работает благодаря взаимодействию браузера и сервера.</p>
+        </div>
+        <div class="glass-panel architecture-flow">
+          <div class="flow-node"><span class="flow-icon">01</span><strong>Браузер</strong><p>Пользователь вводит адрес и отправляет запрос.</p></div>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <div class="flow-node"><span class="flow-icon">02</span><strong>Интернет и DNS</strong><p>Доменное имя сопоставляется с IP-адресом.</p></div>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <div class="flow-node"><span class="flow-icon">03</span><strong>Веб-сервер</strong><p>Сервер обрабатывает запрос и отправляет данные обратно.</p></div>
+        </div>
+        <div class="tech-grid">
+          <article class="glass-panel tech-card"><span class="tech-label">СТРУКТУРА</span><h3>HTML</h3><p>Размечает содержимое: заголовки, абзацы, изображения, таблицы и ссылки. Это не язык программирования, а язык разметки.</p></article>
+          <article class="glass-panel tech-card"><span class="tech-label">ВНЕШНИЙ ВИД</span><h3>CSS</h3><p>Задаёт цвета, размеры, отступы, расположение элементов, анимации и адаптацию страницы под разные экраны.</p></article>
+          <article class="glass-panel tech-card"><span class="tech-label">ПОВЕДЕНИЕ</span><h3>JavaScript</h3><p>Добавляет логику и интерактивность: проверяет формы, реагирует на нажатия и обновляет содержимое страницы.</p></article>
+        </div>
+
+        <figure class="glass-panel meme-panel meme-panel-html meme-panel-image-only">
+          <img class="meme-image" src="assets/html-cat-meme.jpg" alt="Мем с котом, где кот обозначен как HTML среди других языков программирования">
+        </figure>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content"><span>CYBER / BASICS</span><span>Учебный проект по информатике · 2026</span><a href="#top" aria-label="Наверх">↑ Наверх</a></div>
+    </footer>
+  </div>
+</body>
+</html>
